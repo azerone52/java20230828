@@ -1,5 +1,7 @@
 package leetCode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -22,9 +24,45 @@ public class No1431 {
 //        });
     }
 }
+//추가 사탕까지 받았을 때 가장 많은 사탕이 있을 경우 true
+//max값을 가진 녀석을 먼저 구한 후 비교하면 되겠군
 class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        return null;
+        //sort로 최댓값 찾는 걸 써보고 싶어서 써봤는데 효율 너무 낮음
+//        int[] sortCandies = new int[candies.length];
+//        for(int i=0; i<candies.length; i++){
+//            sortCandies[i] = candies[i];
+//
+//        }
+//        Arrays.sort(sortCandies);
+//        int max = sortCandies[sortCandies.length-1];
+//
+//        List<Boolean> list = new ArrayList<>();
+//        for(int i=0; i<candies.length; i++){
+//            if(max<=(candies[i]+extraCandies)){
+//                list.add(true);
+//            }
+//            else{
+//                list.add(false);
+//            }
+//        }
+//        return list;
+        int max=0;
+        for (int i = 0; i < candies.length; i++) {
+            if(max<candies[i]){
+                max=candies[i];
+            }
+        }
+        List<Boolean> list = new ArrayList<>();
+        for(int i=0; i<candies.length; i++){
+            if(max<=(candies[i]+extraCandies)){
+                list.add(true);
+            }
+            else{
+                list.add(false);
+            }
+        }
+        return list;
     }
 }
 //class Some {
