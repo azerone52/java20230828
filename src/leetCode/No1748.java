@@ -19,7 +19,18 @@ class Solution1748 {
         int sum=0;
         Map<Integer, Integer> map = new HashMap<>();
         for(int num: nums){
-
+            if(map.containsKey(num)){
+                map.put(num, map.get(num)+1);
+            }
+            else{
+                map.put(num, 1);
+            }
+        }
+        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+            //if(entry.getValue().equals(1)) 도 가능
+            if(entry.getValue()==1){
+                sum+=entry.getKey();
+            }
         }
 //        Set<Integer> set = new HashSet<>();
 //        for(int i=0;i<nums.length-1; i++){
