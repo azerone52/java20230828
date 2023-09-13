@@ -18,8 +18,15 @@ public class Example {
         double avg = (list.stream()
                 .map(e->e.getAge())
                 .reduce(0, (x,y)->x+y))/ list.size();
-
         System.out.println("avg = " + avg);
+
+
+        double avg2 = list.stream()
+                .mapToDouble(Member::getAge)
+                .average()
+                .getAsDouble();
+        System.out.println("avg2 = " + avg2);
+
 
         System.out.println("가장 많은 나이를 reduce로 구해서 출력");
         Integer max = list.stream()
