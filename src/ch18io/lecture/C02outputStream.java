@@ -11,7 +11,7 @@ public class C02outputStream {
         try {
             OutputStream os = new FileOutputStream("out.txt");
             os.write(70);
-            os.write(62);
+            os.write(2);
             os.write(88);
 
             os.close();//꼭 닫아줘야 함
