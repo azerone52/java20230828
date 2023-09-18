@@ -18,7 +18,8 @@ public class C16copy {
                 while((len = reader.read(chars))!=-1){
 //                    for (int i= 0; i < len; i++) {
 //                        System.out.print(chars[i]);
-//                    }//내용물 출력됨
+//                    }//내용물 콘솔에 출력됨
+                    //0부터 len(읽은 문자수)만큼만 파일에 출력시킴
                     writer.write(chars, 0, len);
                 }
             }
