@@ -4,6 +4,7 @@ import java.io.*;
 
 public class C17copy {
     public static void main(String[] args) {
+        //바이트 단위는 문자도 그림도 다 가능하다.
         String src = "src/ch18io/lecture/C17copy.java";
         String des = "C:/Temp/C17copy.java";
 
